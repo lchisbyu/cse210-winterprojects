@@ -24,7 +24,7 @@ class Program
 
 
         }
-        // while (input != 0) ;
+
 
         // This Initializes a variable to store the sum of the numbers
         int sum = 0;
