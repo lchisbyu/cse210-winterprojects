@@ -1,0 +1,21 @@
+using System;
+
+class Date //methods and properties specific to the Date class go here
+{
+    public string GetDate()
+    {
+        Console.WriteLine("Do you want to use today's date?");
+        string dateAnswer =
+        Console.ReadLine().ToLower();
+
+        if (dateAnswer == "no")
+        {
+            Console.WriteLine("Insert date:");
+            return Console.ReadLine();
+        }
+        else
+        {
+            return DateTime.Now.ToString("MM/dd/yyyy");
+        }
+    }
+}
