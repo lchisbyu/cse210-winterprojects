@@ -1,17 +1,28 @@
-using System; // used to store the reference and text of each scripture
-
 public class Scripture
 {
-    public string Reference { get; set; }  //declares a public
-    public string Text { get; set; }  //declares a public property named text of type string
+    public string Reference { get; }
+    public string Text { get; }
 
-    public Scripture(string reference, string text)  //declares a public constructor that takes two arguments, both of type string
-
+    public Scripture(string reference, string text)
     {
-        Reference = reference;  // This line sets the value of the reference property to the value of the reference argument
-
-        Text = text;  //sets the value of the reference property to the value of the reference argument
-
+        Reference = reference;
+        Text = text;
     }
 
+    public Scripture(string book, int chapter, int verseStart, int? verseEnd = null)
+    {
+        if (verseEnd == null)
+            Reference = $"{book} {chapter}:{verseStart}";
+        else if (verseStart == verseEnd)
+            Reference = $"{book} {chapter}:{verseStart}";
+        else
+            Reference = $"{book} {chapter}:{verseStart}-{verseEnd}";
+
+        Text = ""; // initialize empty text
+    }
+
+    public override string ToString()
+    {
+        return $"{Reference}\n{Text}";
+    }
 }
