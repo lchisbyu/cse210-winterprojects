@@ -30,5 +30,9 @@ namespace GoalTracker
             // return a string that includes the goal name and the point value for each completion of the goal
             return $"{Title} ({pointValue} points per completion)";
         }
+        public override string GetProgressDescription()
+        {
+            return IsComplete() ? "Complete!" : "Incomplete";
+        }
     }
 }

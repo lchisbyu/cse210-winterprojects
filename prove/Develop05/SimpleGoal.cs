@@ -17,9 +17,9 @@ namespace GoalTracker
         }
 
         // Override the ProgressDescription property to describe the progress towards completing the goal
-        public override string ProgressDescription
+        public override string GetProgressDescription()
         {
-            get { return IsComplete() ? "Complete!" : "Incomplete"; }
+            return IsComplete() ? "Complete!" : "Incomplete";
         }
     }
 }
